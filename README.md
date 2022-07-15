@@ -1,1 +1,1 @@
-# temainternship
+# temaInternship
