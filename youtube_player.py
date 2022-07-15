@@ -2,6 +2,7 @@ import selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
+import time
 
 chrome_options = webdriver.ChromeOptions()
 
@@ -28,3 +29,17 @@ first_video = driver.find_element(by=By.XPATH, value='/html/body/ytd-app/div[1]/
                                                      '1]/ytd-thumbnail/a')
 first_video.get_attribute('href')
 first_video.click()
+
+# waiting 10 secs to be able to skip the add
+time.sleep(10)
+try:
+    skip_add = driver.find_element(by=By.XPATH, value='.//button [contains(@class, "ytp-ad-skip-button ytp-button")]')
+    skip_add.click()
+except selenium.common.exceptions.NoSuchElementException:
+    time.sleep(25)  # exception in case the add is longer
+    try:
+        skip_add = driver.find_element(by=By.XPATH, value='.//button [contains(@class, "ytp-ad-skip-button '
+                                                          'ytp-button")]')
+        skip_add.click()
+    except selenium.common.exceptions.NoSuchElementException:
+        pass  # in case you can't skip the add
