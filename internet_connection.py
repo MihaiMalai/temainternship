@@ -1,9 +1,10 @@
 import requests
-
+import logging
 
 def check_internet():
     url = "https://www.youtube.com/"
     timeout = 5
+    logging.info('Checking internet connection')
     try:
         requests.get(url, timeout=timeout)
     except (requests.ConnectionError, requests.Timeout):
