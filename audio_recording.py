@@ -1,13 +1,14 @@
 import pyaudio
 import wave
 import logging
+from analyze_wav import measure_wav_db_level
 
 def record_audio():
     chunk = 1024
     sample_format = pyaudio.paInt16
     channels = 1
     rate = 44100
-    record_seconds = 10
+    record_seconds = 30
     wave_output_filename = "output.wav"
 
     p = pyaudio.PyAudio()
@@ -39,3 +40,5 @@ def record_audio():
     wf.setframerate(rate)
     wf.writeframes(b''.join(frames))
     wf.close()
+
+    measure_wav_db_level(wave_output_filename)

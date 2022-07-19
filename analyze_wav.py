@@ -11,4 +11,4 @@ def measure_wav_db_level(wav_file):
     # convert data to float64, because it's hard to work on int16
     t = (np.array(x)).astype(np.float64)
     orig_SPL = 20*np.log10(np.sqrt(np.mean(np.absolute(t)**2))) - log_scale
-    logging.info(f'Sound level:   {str(orig_SPL)} dFFS')
+    logging.info(f'Sound level:   {str(orig_SPL)} dBFS')

@@ -13,7 +13,7 @@ def record_video():
 
     out = cv2.VideoWriter("output.avi", fourcc, frames_per_second, screen_size)
 
-    record_seconds = 10
+    record_seconds = 30
 
     logging.info('video recording')
 

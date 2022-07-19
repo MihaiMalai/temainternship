@@ -5,6 +5,28 @@ from selenium.webdriver.chrome.service import Service
 import time
 from internet_connection import check_internet
 import logging
+from video_recording import record_video
+from audio_recording import record_audio
+
+
+def skip_adds(driver):
+    try:
+        logging.info('Skipping the add')
+        skip_add = driver.find_element(by=By.XPATH, value='.//button [contains(@class, "ytp-ad-skip-button '
+                                                          'ytp-button")]')
+        skip_add.click()
+    except selenium.common.exceptions.NoSuchElementException:
+        logging.exception('Exception occurred, unable to skip the add')
+    except selenium.common.exceptions.ElementNotInteractableException:
+        logging.exception('Exception occurred, waiting 6 more seconds to skip the add')
+        time.sleep(6)  # exception in case the add is longer
+        try:
+            skip_add = driver.find_element(by=By.XPATH, value='.//button [contains(@class, "ytp-ad-skip-button '
+                                                              'ytp-button")]')
+            skip_add.click()
+        except selenium.common.exceptions.NoSuchElementException:
+            logging.exception('Exception occurred, unable to skip the add')
+
 
 logging.basicConfig(level=logging.INFO, filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %('
                                                                                  'message)s')
@@ -65,17 +87,15 @@ time.sleep(4)
 
 check_internet()
 
-try:
-    logging.info('Skipping the add')
-    skip_add = driver.find_element(by=By.XPATH, value='.//button [contains(@class, "ytp-ad-skip-button ytp-button")]')
-    skip_add.click()
-except selenium.common.exceptions.NoSuchElementException:
-    logging.exception('Exception occurred, waiting 6 more seconds to skip the add')
-    time.sleep(6)  # exception in case the add is longer
-    try:
-        skip_add = driver.find_element(by=By.XPATH, value='.//button [contains(@class, "ytp-ad-skip-button '
-                                                          'ytp-button")]')
-        skip_add.click()
-    except selenium.common.exceptions.NoSuchElementException:
-        logging.exception('Exception occurred, unable to skip the add')
+skip_adds(driver)
+record_video()
 
+check_internet()
+
+driver.refresh()  # restart the video to perform audio recording
+time.sleep(8)
+skip_adds(driver)
+
+record_audio()
+
+driver.quit()
