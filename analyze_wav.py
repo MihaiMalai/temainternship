@@ -1,12 +1,11 @@
 import numpy as np
 from scipy.io import wavfile
-import soundfile as sf
 import logging
 
 
 def measure_wav_db_level(wav_file):
     logging.info(f'Reading {wav_file} wave audio file')
-    fs, x = wav_file.read(wav_file)
+    fs, x = wavfile.read(wav_file)
     log_scale = 20*np.log10(32767)
 
     # convert data to float64, because it's hard to work on int16
