@@ -31,3 +31,11 @@ def record_audio():
     stream.stop_stream()
     stream.close()
     p.terminate()
+
+    logging.info("create wav audio file")
+    wf = wave.open(wave_output_filename, 'wb')
+    wf.setnchannels(channels)
+    wf.setsampwidth(p.get_sample_size(sample_format))
+    wf.setframerate(rate)
+    wf.writeframes(b''.join(frames))
+    wf.close()
