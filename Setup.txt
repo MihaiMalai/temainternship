@@ -1,0 +1,39 @@
+Youtube video and audio recorder setup
+
+This app was created using the following:
+OS: Microsoft Windows 10 Pro Version 10.0.19044 (64-bit)
+
+Software: Python 3.10, Selenium 4.3.0, Google Chrome 103.0.5060.134 (64-bit), ChromeDriver 103, numpy, opencv-python, pyautogui, pyaudio, scipy, requests.
+
+Main hardware:  x64-based PC with Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz, 2400 Mhz, 2 Core(s), 4 Logical Processor(s), 8.00GB RAM and earbuds with microphone.
+
+Others: Internet connection with at least 1Mbps download speed
+
+In order to use the app follow the next steps:
+
+1. Download and install Python3:
+
+1.1 Download from: https://www.python.org/downloads/ (at the time of creating this app, 3.10.5 is the latest version)
+
+1.2 Install by ticking “Add Python 3.10 to PATH” check box
+
+2. Download and install Google Chrome web browser from https://www.google.com/chrome/
+and ChromeDriver from https://chromedriver.chromium.org/downloads
+
+3. Install required libraries by accessing Command Prompt and typing:
+py -m pip install selenium numpy opencv-python pyautogui pyaudio scipy requests
+
+3.1 Possible errors while installing pyaudio:
+	”error: Microsoft Visual C++ 14.0 or greater is required. Get it with ”Microsoft C++ Build Tools”: ”
+	This can be fixed by downloading and installing Microsoft Visual Studio from https://visualstudio.microsoft.com/visual-cpp-build-tools/,
+	ticking Desktop Development with C++  followed by a reboot.
+
+3.2 Other possible error while installing pyaudio:
+	”fatal error C1083: Cannot open include file: 'portaudio.h': No such file or directory”
+	This can be fixed by installing pipwin: py -m pip install pipwin
+	and using pipwin to install pyaudio: py -m pipwin install pyaudio
+Source: https://stackoverflow.com/questions/51992375/how-to-fix-installation-issues-for-pyaudio-portaudio-fatal-error-c1083-canno
+
+4. Prior to running the program introduce your chromedriver’s path instead of ‘…’ in line 47 “service = Service('...')” from youtube_player.py.
+
+4.1 Run youtube_player.py
