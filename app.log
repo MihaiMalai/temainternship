@@ -12,88 +12,14 @@ root - INFO - Loading video
 root - INFO - Making video full screen
 root - INFO - Checking internet connection
 root - INFO - Skipping the add
-root - ERROR - Exception occurred, unable to skip the add
-Traceback (most recent call last):
-  File "C:\Users\UltraBook\PycharmProjects\pythonProject1\temaInternship\temainternship\youtube_player.py", line 72, in skip_adds
-    skip_add = driver.find_element(by=By.XPATH, value='.//button [contains(@class, "ytp-ad-skip-button ytp-button")]')
-  File "C:\Users\UltraBook\PycharmProjects\pythonProject1\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 857, in find_element
-    return self.execute(Command.FIND_ELEMENT, {
-  File "C:\Users\UltraBook\PycharmProjects\pythonProject1\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 435, in execute
-    self.error_handler.check_response(response)
-  File "C:\Users\UltraBook\PycharmProjects\pythonProject1\venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":".//button [contains(@class, "ytp-ad-skip-button ytp-button")]"}
-  (Session info: chrome=103.0.5060.114)
-Stacktrace:
-Backtrace:
-	Ordinal0 [0x0111D953+2414931]
-	Ordinal0 [0x010AF5E1+1963489]
-	Ordinal0 [0x00F9C6B8+837304]
-	Ordinal0 [0x00FC9500+1021184]
-	Ordinal0 [0x00FC979B+1021851]
-	Ordinal0 [0x00FF6502+1205506]
-	Ordinal0 [0x00FE44E4+1131748]
-	Ordinal0 [0x00FF4812+1198098]
-	Ordinal0 [0x00FE42B6+1131190]
-	Ordinal0 [0x00FBE860+976992]
-	Ordinal0 [0x00FBF756+980822]
-	GetHandleVerifier [0x0138CC62+2510274]
-	GetHandleVerifier [0x0137F760+2455744]
-	GetHandleVerifier [0x011AEABA+551962]
-	GetHandleVerifier [0x011AD916+547446]
-	Ordinal0 [0x010B5F3B+1990459]
-	Ordinal0 [0x010BA898+2009240]
-	Ordinal0 [0x010BA985+2009477]
-	Ordinal0 [0x010C3AD1+2046673]
-	BaseThreadInitThunk [0x76DDFA29+25]
-	RtlGetAppContainerNamedObjectPath [0x771B7A9E+286]
-	RtlGetAppContainerNamedObjectPath [0x771B7A6E+238]
-
 root - INFO - video recording
 root - INFO - done video recording
 root - INFO - processing video
 root - INFO - done processing video
 root - INFO - Checking internet connection
 root - INFO - Skipping the add
-root - ERROR - Exception occurred, unable to skip the add
-Traceback (most recent call last):
-  File "C:\Users\UltraBook\PycharmProjects\pythonProject1\temaInternship\temainternship\youtube_player.py", line 72, in skip_adds
-    skip_add = driver.find_element(by=By.XPATH, value='.//button [contains(@class, "ytp-ad-skip-button ytp-button")]')
-  File "C:\Users\UltraBook\PycharmProjects\pythonProject1\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 857, in find_element
-    return self.execute(Command.FIND_ELEMENT, {
-  File "C:\Users\UltraBook\PycharmProjects\pythonProject1\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 435, in execute
-    self.error_handler.check_response(response)
-  File "C:\Users\UltraBook\PycharmProjects\pythonProject1\venv\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":".//button [contains(@class, "ytp-ad-skip-button ytp-button")]"}
-  (Session info: chrome=103.0.5060.114)
-Stacktrace:
-Backtrace:
-	Ordinal0 [0x0111D953+2414931]
-	Ordinal0 [0x010AF5E1+1963489]
-	Ordinal0 [0x00F9C6B8+837304]
-	Ordinal0 [0x00FC9500+1021184]
-	Ordinal0 [0x00FC979B+1021851]
-	Ordinal0 [0x00FF6502+1205506]
-	Ordinal0 [0x00FE44E4+1131748]
-	Ordinal0 [0x00FF4812+1198098]
-	Ordinal0 [0x00FE42B6+1131190]
-	Ordinal0 [0x00FBE860+976992]
-	Ordinal0 [0x00FBF756+980822]
-	GetHandleVerifier [0x0138CC62+2510274]
-	GetHandleVerifier [0x0137F760+2455744]
-	GetHandleVerifier [0x011AEABA+551962]
-	GetHandleVerifier [0x011AD916+547446]
-	Ordinal0 [0x010B5F3B+1990459]
-	Ordinal0 [0x010BA898+2009240]
-	Ordinal0 [0x010BA985+2009477]
-	Ordinal0 [0x010C3AD1+2046673]
-	BaseThreadInitThunk [0x76DDFA29+25]
-	RtlGetAppContainerNamedObjectPath [0x771B7A9E+286]
-	RtlGetAppContainerNamedObjectPath [0x771B7A6E+238]
-
 root - INFO - audio recording
 root - INFO - done audio recording
 root - INFO - create wav audio file
 root - INFO - Reading output.wav wave audio file
-root - INFO - Sound level:   -44.28843177375178 dBFS
+root - INFO - Sound level:   -65.72922879073784 dBFS
