@@ -79,8 +79,12 @@ logging.info('Loading video')
 time.sleep(3)
 
 logging.info('Making video full screen')
-fullscreen = driver.find_element(by=By.XPATH, value='.//button [contains(@class, "ytp-fullscreen-button ytp-button")]')
-fullscreen.click()
+try:
+    fullscreen = driver.find_element(by=By.XPATH, value='.//button [contains(@class, "ytp-fullscreen-button '
+                                                        'ytp-button")]')
+    fullscreen.click()
+except selenium.common.exceptions.ElementNotInteractableException:
+    logging.exception('Exception occurred, unable to make video full screen')
 
 # waiting 4 secs to be able to skip the add
 time.sleep(4)
